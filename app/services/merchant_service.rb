@@ -4,6 +4,14 @@ class MerchantService
       call_api('/api/v1/merchants')
     end
 
+    def find_by_id(id)
+      call_api("/api/v1/merchants/#{id}")
+    end
+
+    def merchant_items(merchant_id)
+      call_api("/api/v1/merchants/#{merchant_id}/items")
+    end
+
     private
 
     def call_api(path)
